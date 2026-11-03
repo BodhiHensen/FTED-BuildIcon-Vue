@@ -55,13 +55,18 @@
 <script setup>
 import { ref, reactive } from 'vue'
 
+// Props van het bovenliggende component
 defineProps({
   isOpen: Boolean
 })
 
+// Event om de popup te sluiten
 const emit = defineEmits(['close'])
 
+// Status of het formulier is verzonden
 const submitted = ref(false)
+
+// Reactieve formulierdata gekoppeld via v-model
 const form = reactive({
   name: '',
   email: '',
@@ -70,6 +75,7 @@ const form = reactive({
   message: ''
 })
 
+// Formulier versturen
 const handleSubmit = () => {
   submitted.value = true
   setTimeout(() => {

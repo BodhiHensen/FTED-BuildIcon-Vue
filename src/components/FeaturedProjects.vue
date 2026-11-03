@@ -50,11 +50,12 @@
 <script setup>
 import { ref, computed } from 'vue'
 
+// Actieve filtercategorie en geselecteerd project
 const activeCategory = ref('all')
-// Shreveport, Bossier City (id: 2) is active by default to match Image 3 exactly!
 const activeProjectId = ref(2)
 const hoveredProjectId = ref(null)
 
+// Beschikbare categorieën voor de tabs
 const categories = [
   { id: 'all', name: 'ALL' },
   { id: 'building', name: 'BUILDING' },
@@ -114,6 +115,7 @@ const allProjects = [
   }
 ]
 
+// Filter de projecten automatisch op basis van de gekozen categorie
 const filteredProjects = computed(() => {
   if (activeCategory.value === 'all') {
     return allProjects
@@ -121,6 +123,7 @@ const filteredProjects = computed(() => {
   return allProjects.filter(p => p.categories.includes(activeCategory.value))
 })
 
+// Categorie aanpassen bij tab klik
 const setCategory = (catId) => {
   activeCategory.value = catId
 }

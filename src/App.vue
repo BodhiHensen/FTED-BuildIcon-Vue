@@ -48,9 +48,11 @@ import ScrollToTop from './components/ScrollToTop.vue'
 import QuoteModal from './components/QuoteModal.vue'
 import SearchModal from './components/SearchModal.vue'
 
+// Zichtbaarheid van de popups beheren met reactieve refs
 const isQuoteModalOpen = ref(false)
 const isSearchModalOpen = ref(false)
 
+// Begin bovenaan de pagina bij het laden
 onMounted(() => {
   if (window.location.hash === '#home' || !window.location.hash) {
     window.scrollTo(0, 0)

@@ -23,5 +23,6 @@
 </template>
 
 <script setup>
+// Event om offerte popup te openen via bovenliggend component
 defineEmits(['open-quote'])
 </script>

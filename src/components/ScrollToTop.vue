@@ -15,13 +15,15 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
+// Zichtbaarheid van de scroll-naar-boven knop
 const isVisible = ref(false)
 
+// Toon de knop als de gebruiker meer dan 200px naar beneden scrollt
 const handleScroll = () => {
-  // Only show the button when scrolled down more than 200px
   isVisible.value = window.scrollY > 200
 }
 
+// Soepel naar boven scrollen bij klik
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
@@ -29,6 +31,7 @@ const scrollToTop = () => {
   })
 }
 
+// Event listeners toevoegen en opruimen
 onMounted(() => {
   window.addEventListener('scroll', handleScroll, { passive: true })
   handleScroll()

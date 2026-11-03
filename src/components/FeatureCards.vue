@@ -79,6 +79,7 @@
 </template>
 
 <script setup>
+// Drie uitgelichte service kaarten (Construction, About Us, Teamwork)
 </script>
 
 <style scoped>

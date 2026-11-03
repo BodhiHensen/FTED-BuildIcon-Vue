@@ -22,13 +22,16 @@
 <script setup>
 import { ref } from 'vue'
 
+// Props en events voor het openen en sluiten van de zoekbalk
 defineProps({
   isOpen: Boolean
 })
-
 const emit = defineEmits(['close'])
+
+// Ingevulde zoekterm gekoppeld via v-model
 const query = ref('')
 
+// Zoekopdracht uitvoeren bij enter
 const handleSearch = () => {
   if (query.value.trim()) {
     alert(`Searching for: ${query.value}`)

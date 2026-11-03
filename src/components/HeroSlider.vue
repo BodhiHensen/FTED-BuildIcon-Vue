@@ -56,8 +56,10 @@
 <script setup>
 import { ref } from 'vue'
 
+// Reactieve state voor de actieve slide index
 const currentSlide = ref(0)
 
+// Data voor alle slides in de carousel
 const slides = [
   {
     image: '/images/hero1.jpg',
@@ -82,10 +84,12 @@ const slides = [
   }
 ]
 
+// Volgende slide tonen
 const nextSlide = () => {
   currentSlide.value = (currentSlide.value + 1) % slides.length
 }
 
+// Vorige slide tonen
 const prevSlide = () => {
   currentSlide.value = (currentSlide.value - 1 + slides.length) % slides.length
 }

@@ -106,10 +106,13 @@
 <script setup>
 import { ref } from 'vue'
 
+// Events naar het hoofdcomponent sturen
 defineEmits(['open-quote', 'toggle-search'])
 
+// Status van het mobiele menu
 const isMobileMenuOpen = ref(false)
 
+// Terug naar boven scrollen bij klik op het logo
 const scrollToTop = () => {
   window.scrollTo({
     top: 0,
